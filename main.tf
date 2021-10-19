@@ -15,7 +15,7 @@ data "aws_ami" "rhel8" {
     values = ["hvm"]
   }
   
-  owners = "239608013568"
+  owners = ["239608013568"]
 }
 
 resource "aws_instance" "rhel8" {

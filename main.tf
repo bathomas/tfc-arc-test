@@ -25,6 +25,8 @@ resource "aws_instance" "rhel8" {
   tags = {
     Name = var.instance_name
   }
+  
+  key_name = "maniq-key"
 }
 
 resource "aws_db_instance" "default" {

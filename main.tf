@@ -3,9 +3,7 @@ provider "aws" {
 }
 
 data "aws_ami" "rhel8" {
-  executable_users = ["self"]
-  most_recent      = true
-  name_regex       = "^aws-rhel8"
+  most_recent = true
 
   filter {
     name   = "name"
@@ -17,7 +15,10 @@ data "aws_ami" "rhel8" {
     values = ["hvm"]
   }
 
-  owners = ["self"]
+  filter {
+    name = "owner-id"
+    values = ["239608013568"]
+  }
   
 }
 

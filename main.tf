@@ -14,12 +14,8 @@ data "aws_ami" "rhel8" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
-
-  filter {
-    name = "owner-id"
-    values = ["239608013568"]
-  }
   
+  owners = "239608013568"
 }
 
 resource "aws_instance" "rhel8" {

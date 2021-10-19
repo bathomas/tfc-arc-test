@@ -4,6 +4,7 @@ provider "aws" {
 
 data "aws_ami" "rhel8" {
   most_recent = true
+  name_regex  = "^aws-rhel8"
 
   filter {
     name   = "name"

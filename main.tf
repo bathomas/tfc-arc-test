@@ -3,8 +3,9 @@ provider "aws" {
 }
 
 data "aws_ami" "rhel8" {
-  most_recent = true
-  name_regex  = "^aws-rhel8"
+  executable_users = ["self"]
+  most_recent      = true
+  name_regex       = "^aws-rhel8"
 
   filter {
     name   = "name"
@@ -17,6 +18,7 @@ data "aws_ami" "rhel8" {
   }
 
   owners = ["self"]
+  
 }
 
 resource "aws_instance" "rhel8" {

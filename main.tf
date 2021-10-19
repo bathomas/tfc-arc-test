@@ -7,7 +7,7 @@ data "aws_ami" "rhel8" {
 
   filter {
     name   = "name"
-    values = ["aws-rhel8-20211019114321"]
+    values = ["aws-rhel8-*"]
   }
 
   filter {
